@@ -1,0 +1,40 @@
+" Some sort of swap file fix
+set directory=$TEMP
+
+" Leader mapping
+let mapleader = ","
+
+" Save
+nmap <leader>w :w!<cr>
+
+" Quit
+nmap <leader>q :q<cr>
+nmap <leader>zz :wq!<cr>
+
+" Remove search term highlights
+nmap <leader>nh :nohl<cr>
+
+" Map Ctrl-J to <esc>
+imap <C-j> <Esc>
+
+" " Tab navigation
+map <C-H> gT
+map <C-L> gt
+
+nnoremap k gk
+nnoremap j gj
+nnoremap gk k
+nnoremap gj j
+
+" Please don't show Help when I miss the 1, escape or tilde buttons
+map <F1> ""
+
+" :set hidden
+set title
+
+" Paste toggle
+set pastetoggle=<F2>
+
+" Inserts the path of the currently edited file into a command
+" Command mode: Ctrl+P
+cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
