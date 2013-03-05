@@ -27,6 +27,7 @@ Bundle 'tpope/vim-surround.git'
 Bundle 'benmills/vimux.git'
 Bundle 'cloud8421/vimux-cucumber.git'
 Bundle 'pgr0ss/vimux-ruby-test.git'
+Bundle 'tpope/vim-rake.git'
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
