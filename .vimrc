@@ -10,7 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'vim-scripts/ack.vim.git'
+Bundle 'mileszs/ack.vim'
 Bundle 'vim-scripts/FuzzyFinder.git'
 Bundle 'vim-scripts/L9.git'
 Bundle 'sjl/gundo.vim.git'
@@ -21,13 +21,17 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-fugitive.git'
 Bundle 'michaeljsmith/vim-indent-object.git'
+Bundle 'benmills/vimux'
+Bundle 'cloud8421/vimux-cucumber'
+Bundle 'pgr0ss/vimux-ruby-test'
 Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-repeat.git'
 Bundle 'tpope/vim-surround.git'
-Bundle 'benmills/vimux.git'
-Bundle 'cloud8421/vimux-cucumber.git'
-Bundle 'pgr0ss/vimux-ruby-test.git'
 Bundle 'tpope/vim-rake.git'
+Bundle 'mattn/zencoding-vim.git'
+Bundle 'jistr/vim-nerdtree-tabs.git'
+Bundle 'nono/vim-handlebars'
+Bundle 'ervandew/supertab.git'
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
