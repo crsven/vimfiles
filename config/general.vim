@@ -27,7 +27,8 @@ nnoremap gk k
 nnoremap gj j
 
 " Please don't show Help when I miss the 1, escape or tilde buttons
-map <F1> ""
+nmap <F1> :echo<CR>
+imap <F1> <C-o>:echo<CR>
 
 " :set hidden
 set title

@@ -3,13 +3,12 @@ if exists('$TMUX')
   autocmd FileType coffee map <Leader>ta :call RunVimTmuxCommand("clear; bundle exec jasmine-headless-webkit\n")<CR>
   autocmd FileType javascript map <Leader>ts :call RunVimTmuxCommand("clear; bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
   autocmd FileType javascript map <Leader>ta :call RunVimTmuxCommand("clear; bundle exec jasmine-headless-webkit\n")<CR>
-  autocmd FileType cucumber map <Leader>ts :RunFocusedCuke<CR>
-  autocmd FileType cucumber nmap <Leader>tf :call RunVimTmuxCommand("clear; bundle exec cucumber ".bufname("%")."\n")<CR>
-  autocmd FileType cucumber map <Leader>ta :RunAllCukes<CR>
   autocmd FileType ruby map <leader>ts :RunRubyFocusedTest<CR>
-  autocmd FileType ruby nmap <leader>ru :call RunVimTmuxCommand("clear; bundle exec ruby -Itest/ ".bufname("%")."\n")<CR>
+  autocmd FileType ruby map <leader>tf :RunAllRubyTests<CR>
   autocmd FileType ruby map <leader>ta :call RunVimTmuxCommand("clear; bundle exec rspec\n")<CR>
-  autocmd FileType ruby map <leader>tf :call RunVimTmuxCommand("clear; bundle exec rspec ".bufname("%")."\n")<CR>
+  autocmd FileType cucumber map <Leader>ts :RunFocusedCuke<CR>
+  autocmd FileType cucumber map <Leader>ta :RunAllCukes<CR>
+  autocmd FileType cucumber nmap <Leader>tf :call RunVimTmuxCommand("clear; bundle exec cucumber ".bufname("%")."\n")<CR>
 endif
 
 " Run test with debugger once
