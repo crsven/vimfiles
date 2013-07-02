@@ -1,5 +1,4 @@
 " Settings
-let g:fuf_file_exclude = '\v\~$|\.(o|exe|dll|bak|orig|swp|jpg|png|gif)$|(^|[/\\])\.(hg|git|bzr)($|[/\\])'
 let g:fuf_keyOpenSplit = '<C-j>'
 let g:fuf_keyOpenVsplit = '<C-k>'
 let g:fuf_previewHeight = 0
