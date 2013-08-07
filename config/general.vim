@@ -39,3 +39,7 @@ set pastetoggle=<F2>
 " Inserts the path of the currently edited file into a command
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
+
+set textwidth=80
+set colorcolumn=+1
+highlight ColorColumn guibg=#1c1c1c ctermbg=234 ctermfg=160
