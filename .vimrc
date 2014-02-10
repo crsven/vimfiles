@@ -32,6 +32,7 @@ Bundle 'mattn/emmet-vim.git'
 Bundle 'jistr/vim-nerdtree-tabs.git'
 Bundle 'nono/vim-handlebars'
 Bundle 'ervandew/supertab.git'
+Bundle 'chaquotay/ftl-vim-syntax'
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim

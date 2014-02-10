@@ -12,3 +12,6 @@ au BufNewFile,BufRead *.json set ft=javascript
 
 " add handlebars syntax highlighting
 au BufNewFile,BufRead *.hbs set ft=handlebars
+
+" add ftl syntax highlighting
+au BufNewFile,BufRead *.ftl set ft=ftl
