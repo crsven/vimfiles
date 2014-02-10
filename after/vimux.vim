@@ -4,19 +4,24 @@ let VimuxResetSequence = "q C-u C-l"
 
 if exists('$TMUX')
   " Test commands for various filetypes
-  autocmd FileType coffee map <Leader>ts :call RunVimTmuxCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
-  autocmd FileType coffee map <Leader>ta :call RunVimTmuxCommand("bundle exec jasmine-headless-webkit\n")<CR>
-  autocmd FileType javascript map <Leader>ts :call RunVimTmuxCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
-  autocmd FileType javascript map <Leader>ta :call RunVimTmuxCommand("bundle exec jasmine-headless-webkit\n")<CR>
+  autocmd FileType coffee map <Leader>ts :call VimuxRunCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
+  autocmd FileType coffee map <Leader>ta :call VimuxRunCommand("bundle exec jasmine-headless-webkit\n")<CR>
+  autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
+  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("bundle exec jasmine-headless-webkit\n")<CR>
   autocmd FileType ruby map <leader>ts :RunRubyFocusedTest<CR>
+  "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rescue rspec ".bufname("%").":".line('.')."\n")<CR>
   autocmd FileType ruby map <leader>tf :RunAllRubyTests<CR>
-  autocmd FileType ruby map <leader>ta :call RunVimTmuxCommand("bundle exec rspec\n")<CR>
+  autocmd FileType ruby map <leader>ta :call VimuxRunCommand("bundle exec rspec\n")<CR>
   autocmd FileType cucumber map <Leader>ts :RunFocusedCuke<CR>
   autocmd FileType cucumber map <Leader>ta :RunAllCukes<CR>
-  autocmd FileType cucumber nmap <Leader>tf :call RunVimTmuxCommand("bundle exec cucumber ".bufname("%")."\n")<CR>
+  autocmd FileType cucumber nmap <Leader>tf :call VimuxRunCommand("bundle exec cucumber ".bufname("%")."\n")<CR>
 
   " Get current Cane status
-  map <Leader>tc :call RunVimTmuxCommand("bundle exec cane --abc-max 1 --abc-glob ".bufname("%")."\n")<CR>
+  map <Leader>tc :call VimuxRunCommand("bundle exec cane --style-measure 80 --style-glob ".bufname("%")." --abc-max 1 --abc-glob ".bufname("%")."\n")<CR>
+
+  " Rebuild Mavn
+  map <Leader>bm :call VimuxRunCommand("mvn package -Dmaven.test.skip=true")<CR>
+  map <Leader>cm :call VimuxRunCommand("mvn install -Dmaven.test.skip=true")<CR>
 
   " Re-run last command
   map <leader>tr :VimuxRunLastCommand<CR>
