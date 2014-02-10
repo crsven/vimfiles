@@ -2,6 +2,8 @@ let g:VimuxHeight = "30"
 let g:VimuxOrientation = "h"
 let VimuxResetSequence = "q C-u C-l"
 
+let g:VimuxSporkCommand = ""
+
 if exists('$TMUX')
   " Test commands for various filetypes
   autocmd FileType coffee map <Leader>ts :call VimuxRunCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
