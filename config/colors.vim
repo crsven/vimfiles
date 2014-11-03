@@ -1,5 +1,5 @@
 " " My colorz
 set t_Co=256
-syntax enable
+syntax on
 set background=dark
 colorscheme twilight2

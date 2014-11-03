@@ -6,10 +6,11 @@ let g:VimuxSporkCommand = ""
 
 if exists('$TMUX')
   " Test commands for various filetypes
-  autocmd FileType coffee map <Leader>ts :call VimuxRunCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
-  autocmd FileType coffee map <Leader>ta :call VimuxRunCommand("bundle exec jasmine-headless-webkit\n")<CR>
-  autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("bundle exec jasmine-headless-webkit ".bufname("%")."\n")<CR>
-  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("bundle exec jasmine-headless-webkit\n")<CR>
+  autocmd FileType coffee map <Leader>ts :call VimuxRunCommand("bundle exec rake spec:javascript SPEC=".bufname("%")."\n")<CR>
+  autocmd FileType coffee map <Leader>ta :call VimuxRunCommand("bundle exec rake spec:javascript\n")<CR>
+  "autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("bundle exec rake spec:javascript SPEC=".bufname("%")."\n")<CR>
+  autocmd FileType javascript map <Leader>ts :call VimuxRunJasmineSpec()<CR>
+  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("REPORTERS='terse' bundle exec rake spec:javascript\n")<CR>
   autocmd FileType ruby map <leader>ts :RunRubyFocusedTest<CR>
   "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rescue rspec ".bufname("%").":".line('.')."\n")<CR>
   autocmd FileType ruby map <leader>tf :RunAllRubyTests<CR>
@@ -48,6 +49,11 @@ if exists('$TMUX')
     let s:fake=input("Press Enter to save once tests are running.") " Require user input
     write
     unlet s:fake
+  endfunction
+
+  function! VimuxRunJasmineSpec()
+    let specname = matchstr(getline(1), "['\"].*['\"]")
+    call VimuxRunCommand("REPORTERS='terse' bundle exec rake spec:javascript SPEC=".specname."\n")
   endfunction
 
   " Interact with currently running REPL

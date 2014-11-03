@@ -15,3 +15,7 @@ au BufNewFile,BufRead *.hbs set ft=handlebars
 
 " add ftl syntax highlighting
 au BufNewFile,BufRead *.ftl set ft=ftl
+
+au BufNewFile,BufRead *.less set ft=less
+au BufNewFile,BufRead *.jade set ft=jade
+au BufNewFile,BufRead *.slim set ft=slim

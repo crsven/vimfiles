@@ -10,8 +10,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Bundles
-Bundle 'mileszs/ack.vim'
-Bundle 'vim-scripts/FuzzyFinder.git'
+Bundle 'rking/ag.vim'
 Bundle 'vim-scripts/L9.git'
 Bundle 'sjl/gundo.vim.git'
 Bundle 'scrooloose/nerdcommenter'
@@ -32,7 +31,12 @@ Bundle 'mattn/emmet-vim.git'
 Bundle 'jistr/vim-nerdtree-tabs.git'
 Bundle 'nono/vim-handlebars'
 Bundle 'ervandew/supertab.git'
-Bundle 'chaquotay/ftl-vim-syntax'
+Bundle 'lunaru/vim-less'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'slim-template/vim-slim'
+Bundle 'malkomalko/projections.vim'
+Bundle 'file:///Users/crsven/personal/vim-fuzzyfinder'
+Bundle 'jelera/vim-javascript-syntax'
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
