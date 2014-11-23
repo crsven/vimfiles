@@ -2,41 +2,54 @@ set nocompatible
 
 " Vundle stuff
 filetype off
-filetype plugin indent on
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
-" Bundles
-Bundle 'rking/ag.vim'
-Bundle 'vim-scripts/L9.git'
-Bundle 'sjl/gundo.vim.git'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'tsaleh/vim-align.git'
-Bundle 'kchmck/vim-coffee-script.git'
-Bundle 'tpope/vim-endwise.git'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'michaeljsmith/vim-indent-object.git'
-Bundle 'benmills/vimux'
-Bundle 'cloud8421/vimux-cucumber'
-Bundle 'pgr0ss/vimux-ruby-test'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-repeat.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'tpope/vim-rake.git'
-Bundle 'mattn/emmet-vim.git'
-Bundle 'jistr/vim-nerdtree-tabs.git'
-Bundle 'nono/vim-handlebars'
-Bundle 'ervandew/supertab.git'
-Bundle 'lunaru/vim-less'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'slim-template/vim-slim'
-Bundle 'malkomalko/projections.vim'
-Bundle 'file:///Users/crsven/personal/vim-fuzzyfinder'
-Bundle 'jelera/vim-javascript-syntax'
+" Plugins
+Plugin 'vim-scripts/L9.git'
+Plugin 'sjl/gundo.vim.git'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tsaleh/vim-align.git'
+Plugin 'tpope/vim-endwise.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'michaeljsmith/vim-indent-object.git'
+Plugin 'tpope/vim-repeat.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'mattn/emmet-vim.git'
+Plugin 'ervandew/supertab.git'
+Plugin 'malkomalko/projections.vim'
+Plugin 'flazz/vim-colorschemes'
+
+"Rails dev
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-rake.git'
+
+"Searching
+Plugin 'rking/ag.vim'
+Plugin 'kien/ctrlp.vim'
+
+"Nerdtree
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'jistr/vim-nerdtree-tabs.git'
+
+"Testing plugins
+Plugin 'benmills/vimux'
+Plugin 'cloud8421/vimux-cucumber'
+Plugin 'pgr0ss/vimux-ruby-test'
+
+" Language support
+Plugin 'lunaru/vim-less'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'slim-template/vim-slim'
+Plugin 'nono/vim-handlebars'
+Plugin 'kchmck/vim-coffee-script.git'
+Plugin 'jelera/vim-javascript-syntax'
+
+call vundle#end()
+filetype plugin indent on
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
