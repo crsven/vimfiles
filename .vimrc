@@ -22,6 +22,7 @@ Plugin 'mattn/emmet-vim.git'
 Plugin 'ervandew/supertab.git'
 Plugin 'malkomalko/projections.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'rizzatti/dash.vim'
 
 "Rails dev
 Plugin 'tpope/vim-rails.git'
@@ -47,10 +48,12 @@ Plugin 'slim-template/vim-slim'
 Plugin 'nono/vim-handlebars'
 Plugin 'kchmck/vim-coffee-script.git'
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'rodjek/vim-puppet'
 
 call vundle#end()
 filetype plugin indent on
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
+runtime! config/bundle/*.vim
 runtime! after/**/*.vim
