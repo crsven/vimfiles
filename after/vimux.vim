@@ -9,9 +9,13 @@ if exists('$TMUX')
   autocmd FileType coffee map <Leader>ts :call VimuxRunCommand("bundle exec rake spec:javascript SPEC=".bufname("%")."\n")<CR>
   autocmd FileType coffee map <Leader>ta :call VimuxRunCommand("bundle exec rake spec:javascript\n")<CR>
   "autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("bundle exec rake spec:javascript SPEC=".bufname("%")."\n")<CR>
-  autocmd FileType javascript map <Leader>ts :call VimuxRunJasmineSpec()<CR>
-  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("REPORTERS='terse' bundle exec rake spec:javascript\n")<CR>
+  "autocmd FileType javascript map <Leader>ts :call VimuxRunJasmineSpec()<CR>
+  autocmd FileType javascript map <Leader>ts :call VimuxRunJestTest()<CR>
+  "autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("rake spec:javascript SPEC=".bufname("%")."\n")<CR>
+  "autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("rake spec:javascript\n")<CR>
+  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("npm test\n")<CR>
   autocmd FileType ruby map <leader>ts :RunRubyFocusedTest<CR>
+  "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rspec ".bufname("%")."\n")<CR>
   "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rescue rspec ".bufname("%").":".line('.')."\n")<CR>
   autocmd FileType ruby map <leader>tf :RunAllRubyTests<CR>
   autocmd FileType ruby map <leader>ta :call VimuxRunCommand("bundle exec rspec\n")<CR>
@@ -39,6 +43,10 @@ if exists('$TMUX')
   "autocmd FileType ruby map <leader>wtf Orequire 'ruby-debug'; debugger;<ESC>:w<CR>:VimuxRunLastCommand<CR>dd :sleep 8<CR> :w<CR>
   autocmd FileType ruby map <leader>wtf :call VimuxRerunWithDebugger()<CR>
 
+  function! VimuxRunJestTest()
+    call VimuxRunCommand("npm test -- ".bufname("%")."\n")
+  endfunction
+
   function! VimuxRerunWithDebugger()
     call append(line(".")-1, "")
     let debugCommand = _VimuxOption("g:VimuxDebugCommand", "debugger")
@@ -53,7 +61,7 @@ if exists('$TMUX')
 
   function! VimuxRunJasmineSpec()
     let specname = matchstr(getline(1), "['\"].*['\"]")
-    call VimuxRunCommand("REPORTERS='terse' bundle exec rake spec:javascript SPEC=".specname."\n")
+    call VimuxRunCommand("rake spec:javascript SPEC=".specname."\n")
   endfunction
 
   " Interact with currently running REPL
