@@ -36,8 +36,11 @@ Plugin 'kien/ctrlp.vim'
 "Nerdtree
 Plugin 'scrooloose/nerdtree.git'
 
-"Testing plugins
+"Tmux integration
 Plugin 'benmills/vimux'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+
+"Testing plugins
 Plugin 'cloud8421/vimux-cucumber'
 Plugin 'pgr0ss/vimux-ruby-test'
 
