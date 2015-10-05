@@ -23,6 +23,7 @@ Plugin 'ervandew/supertab.git'
 Plugin 'malkomalko/projections.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'rizzatti/dash.vim'
+Plugin 'Shutnik/jshint2.vim'
 
 "Rails dev
 Plugin 'tpope/vim-rails.git'
