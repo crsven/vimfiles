@@ -34,7 +34,6 @@ Plugin 'kien/ctrlp.vim'
 
 "Nerdtree
 Plugin 'scrooloose/nerdtree.git'
-Plugin 'jistr/vim-nerdtree-tabs.git'
 
 "Testing plugins
 Plugin 'benmills/vimux'
@@ -48,7 +47,6 @@ Plugin 'slim-template/vim-slim'
 Plugin 'nono/vim-handlebars'
 Plugin 'kchmck/vim-coffee-script.git'
 Plugin 'jelera/vim-javascript-syntax'
-Plugin 'rodjek/vim-puppet'
 
 call vundle#end()
 filetype plugin indent on
