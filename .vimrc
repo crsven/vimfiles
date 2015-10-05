@@ -57,5 +57,4 @@ filetype plugin indent on
 
 " delegate configuration to files in config/
 runtime! config/**/*.vim
-runtime! config/bundle/*.vim
 runtime! after/**/*.vim

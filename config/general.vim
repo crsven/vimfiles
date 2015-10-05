@@ -40,6 +40,11 @@ set pastetoggle=<F2>
 " Command mode: Ctrl+P
 cmap <C-P> <C-R>=expand("%:p:h") . "/" <CR>
 
-set textwidth=80
-set colorcolumn=+1
+"set textwidth=80
+set colorcolumn=81
+set formatoptions-=t
 highlight ColorColumn guibg=#1c1c1c ctermbg=234 ctermfg=160
+
+autocmd FileType markdown setlocal wrap
+
+set autoread
