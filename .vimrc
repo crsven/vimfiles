@@ -52,6 +52,10 @@ Plugin 'nono/vim-handlebars'
 Plugin 'kchmck/vim-coffee-script.git'
 Plugin 'jelera/vim-javascript-syntax'
 
+"Clojure
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
+
 call vundle#end()
 filetype plugin indent on
 
