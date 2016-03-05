@@ -10,10 +10,12 @@ if exists('$TMUX')
   autocmd FileType coffee map <Leader>ta :call VimuxRunCommand("bundle exec rake spec:javascript\n")<CR>
   "autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("bundle exec rake spec:javascript SPEC=".bufname("%")."\n")<CR>
   "autocmd FileType javascript map <Leader>ts :call VimuxRunJasmineSpec()<CR>
-  autocmd FileType javascript map <Leader>ts :call VimuxRunJestTest()<CR>
+  "autocmd FileType javascript map <Leader>ts :call VimuxRunJestTest()<CR>
+  autocmd FileType javascript map <Leader>ts :call VimuxRunKonachaSpec()<CR>
   "autocmd FileType javascript map <Leader>ts :call VimuxRunCommand("rake spec:javascript SPEC=".bufname("%")."\n")<CR>
   "autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("rake spec:javascript\n")<CR>
-  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("npm test\n")<CR>
+  autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("rake konacha:run\n")<CR>
+  "autocmd FileType javascript map <Leader>ta :call VimuxRunCommand("npm test\n")<CR>
   autocmd FileType ruby map <leader>ts :RunRubyFocusedTest<CR>
   "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rspec ".bufname("%")."\n")<CR>
   "autocmd FileType ruby map <Leader>ts :call VimuxRunCommand("bundle exec rescue rspec ".bufname("%").":".line('.')."\n")<CR>
@@ -57,6 +59,10 @@ if exists('$TMUX')
     let s:fake=input("Press Enter to save once tests are running.") " Require user input
     write
     unlet s:fake
+  endfunction
+
+  function! VimuxRunKonachaSpec()
+    call VimuxRunCommand("rake konacha:run SPEC=public/".expand("%:t:r")."\n")
   endfunction
 
   function! VimuxRunJasmineSpec()
